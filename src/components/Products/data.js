@@ -7,6 +7,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 1,
@@ -16,6 +17,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 6,
@@ -61,6 +67,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 7,
@@ -70,6 +77,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 8,
@@ -79,6 +87,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 9,
@@ -88,6 +97,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 10,
@@ -97,6 +107,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 11,
@@ -106,6 +117,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 12,
@@ -115,6 +127,7 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
   {
     id: 13,
@@ -124,5 +137,6 @@ export const data = [
     subtitle: "Men's Road Running Shoes",
     colors: 17,
     price: 190,
+    extra: "Just In",
   },
 ];

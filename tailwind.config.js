@@ -10,4 +10,9 @@ export default {
     },
   },
   plugins: [],
+  variantes: {
+    extend: {
+      display: ["group-hover"],
+    },
+  },
 };
