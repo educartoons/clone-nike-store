@@ -37,12 +37,14 @@ const sizes = [
   },
 ];
 
-export default function ProductDescription() {
+export default function ProductDescription(props) {
+  const { product } = props;
+
   return (
     <div className="pl-10">
-      <h2 className="font-medium text-xl">Nike Dunk Low Retro</h2>
-      <h3 className="font-medium text-md mb-4">Men&apos;s Shoes</h3>
-      <p className="font-medium text-md mb-4">$115</p>
+      <h2 className="font-medium text-xl">{product?.name}</h2>
+      <h3 className="font-medium text-md mb-4">{product?.gender}</h3>
+      <p className="font-medium text-md mb-4">${product?.price}</p>
       <div>
         <div className="flex justify-between">
           <p className="font-medium">Select size</p>
@@ -73,6 +75,7 @@ export default function ProductDescription() {
           Favorite
         </button>
       </div>
+      <div className="font-normal mt-12">{product?.description}</div>
     </div>
   );
 }
