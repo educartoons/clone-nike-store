@@ -3,11 +3,6 @@ import { Link } from "react-router-dom";
 export default function Product(props) {
   const { product } = props;
 
-  console.log(product);
-
-  // locahost:5371/products/product/4383858348538583458
-  // localhost:5371/product/:productId
-
   return (
     <Link
       to={{

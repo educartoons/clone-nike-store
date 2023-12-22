@@ -9,7 +9,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
   variantes: {
     extend: {
       display: ["group-hover"],

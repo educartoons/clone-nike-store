@@ -5,12 +5,14 @@ import ProductGallery from "../../components/Gallery";
 import Layout from "../../components/Layout";
 import ProductDescription from "../../components/ProductDescription";
 import ErrorBoundary from "../../components/ErrorBoundary";
+import LoadingIcon from "../../components/Loading";
 
 import { getDoc } from "firebase/firestore";
 import { firestore } from "../../firebase";
 
 export default function ProductPage() {
   const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { productId } = useParams();
 
   const fetchProduct = async () => {
@@ -19,7 +21,11 @@ export default function ProductPage() {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      setProduct(docSnap.data());
+      setProduct({
+        id: productId,
+        ...docSnap.data(),
+      });
+      setLoading(false);
     }
   };
 
@@ -31,14 +37,23 @@ export default function ProductPage() {
     <Layout>
       <ErrorBoundary>
         <div className="max-w-6xl mx-auto">
-          <div className="flex">
-            <div className="grow">
-              <ProductGallery />
+          {loading ? (
+            <div className="flex justify-center">
+              <LoadingIcon />
             </div>
-            <div className="flex-none w-[456px]">
-              <ProductDescription product={product} />
+          ) : (
+            <div className="flex">
+              <div className="grow">
+                <ProductGallery
+                  smallImages={product.smallImages}
+                  largeImages={product.largeImages}
+                />
+              </div>
+              <div className="flex-none w-[456px]">
+                <ProductDescription product={product} />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </ErrorBoundary>
     </Layout>

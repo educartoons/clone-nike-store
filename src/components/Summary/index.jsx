@@ -1,4 +1,17 @@
+import { useSelector } from "react-redux";
+
 export default function Summary() {
+  const items = useSelector((state) => state.cart.items);
+
+  const subtotal = items.reduce(
+    (prev, curr) => prev + Number(curr.price) * Number(curr.quantity),
+    0
+  );
+
+  const shipping = 7;
+
+  const total = subtotal + shipping;
+
   return (
     <div>
       <h2 className="text-3xl font-mediums mb-6">Summary</h2>
@@ -25,11 +38,11 @@ export default function Summary() {
       </div>
       <div className="flex justify-between mb-3">
         <p className="font-normal text-base">Subtotal</p>
-        <p className="font-normal text-base">$180</p>
+        <p className="font-normal text-base">${subtotal}</p>
       </div>
       <div className="flex justify-between mb-3">
         <p className="font-normal text-base">Estimated Shipping & Handling</p>
-        <p className="font-normal text-base">$7.00</p>
+        <p className="font-normal text-base">${shipping}</p>
       </div>
       <div className="flex justify-between mb-3">
         <p className="font-normal text-base">Estimated Tax</p>
@@ -37,7 +50,7 @@ export default function Summary() {
       </div>
       <div className="flex justify-between border-t border-b border-zinc-200 py-4">
         <p className="font-normal text-base">Total</p>
-        <p className="font-medium text-base">$192.00</p>
+        <p className="font-medium text-base">${total}</p>
       </div>
       <div className="mt-10">
         <button className="block w-full py-4 bg-black text-white rounded-full">

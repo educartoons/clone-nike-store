@@ -1,0 +1,8 @@
+.markdown-box {
+  p {
+    @apply text-base my-5 leading-loose;
+  }
+  ul {
+    @apply text-base list-disc list-inside my-6 space-y-2;
+  }
+}

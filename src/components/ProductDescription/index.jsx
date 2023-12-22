@@ -1,3 +1,9 @@
+import { useDispatch } from "react-redux";
+import Markdown from "react-markdown";
+
+import "./index.scss";
+import { addItem } from "../../store/cartReducer";
+
 const sizes = [
   {
     measure: "M 6 / W 7.5",
@@ -40,6 +46,10 @@ const sizes = [
 export default function ProductDescription(props) {
   const { product } = props;
 
+  const dispatch = useDispatch();
+
+  console.log(product);
+
   return (
     <div className="pl-10">
       <h2 className="font-medium text-xl">{product?.name}</h2>
@@ -68,14 +78,21 @@ export default function ProductDescription(props) {
         </p>
       </div>
       <div>
-        <button className="block w-full bg-black text-white rounded-full py-4 mb-3">
+        <button
+          onClick={() => dispatch(addItem(product))}
+          className="block w-full bg-black text-white rounded-full py-4 mb-3"
+        >
           Add to Bag
         </button>
         <button className="block w-full bg-white text-black rounded-full border border-zinc-300 py-4">
           Favorite
         </button>
       </div>
-      <div className="font-normal mt-12">{product?.description}</div>
+      <div className="mt-10">
+        <div className="markdown-box">
+          <Markdown>{product?.description}</Markdown>
+        </div>
+      </div>
     </div>
   );
 }
